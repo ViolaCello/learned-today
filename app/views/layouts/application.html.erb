@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <% if !!session[:user_id] %>
+  <%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
+  <% end %>
     <%= yield %>
   </body>
 </html>
