@@ -36,6 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 
 # I added to ignore all of /config and all of /db
-/config
+# /config
 
 /db 
