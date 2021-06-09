@@ -12,14 +12,33 @@ class EntriesController < ApplicationController
     end
 
     def new
-        
+        @entry = Entry.new
     end
 
+    def create
+        @user = current_user if logged_in?
+        if @user
+            @entry = @user.entries.build(entry_params)
+            if @entry.save 
+                raise.params.inspect
+                redirect_to entry_path(@entry)
+            else 
+                @errors = @entry.errors
+                render :'entries/new'
+            end
+        end
+    end
 
     private
 
     def require_login
         return head(:forbidden) unless session.include? :user_id
     end
+
+    private
+
+def entry_params
+    params.require(:entry).permit(:title, :post, :user_id)
+end
 
 end

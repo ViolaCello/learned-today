@@ -1,0 +1,12 @@
+<h1>User: <%= current_user.name %> </h1>
+<h2>New Entry Page</h2>
+
+
+<%= form_for [@user, @entry] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title%><br>
+<%= f.label :post %><br>
+<%= f.text_field :post, class:"post" %>
+
+<%= f.submit "Save" %>
+<% end %>
