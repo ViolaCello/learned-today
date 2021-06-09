@@ -12,7 +12,10 @@
 
   <body>
   <% if !!session[:user_id] %>
-  <%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
+  <center><%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
+  <br>
+  <%= link_to "Add Entry", new_user_entry_path(current_user)%>
+  </center>
   <% end %>
     <%= yield %>
   </body>
