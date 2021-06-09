@@ -13,6 +13,8 @@ Ruby version: ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-linux]
 
 --database=postgresql
 
+Add to Gemfile: bcrypt (line 23 of Gemfile, un-comment it) 
+
 * Database initialization
 
 * How to run the test suite
