@@ -3,14 +3,22 @@
 
 
 
- <%= form_for [@user, @entry] do |f| %>
+<%= form_for [@user, @entry] do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title%><br>
 <%= f.label :post %><br>
-<%= f.text_field :post, class: "post", wrapper: false %>
+<%= f.text_field :post, class: "post" %>
 
 <%= f.submit "Save" %>
 <% end %>
+
+<div class = "outputArea">
+<div id = "titleSpace"><b>Title Here</b>
+<br><br></div>
+
+<div id = "postSpace">
+Post content Here</div>
+</div>
 
 <%# <script>
 function sayHiTony() {
