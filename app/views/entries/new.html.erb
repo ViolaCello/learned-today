@@ -37,15 +37,19 @@ let postArea = document.querySelector("#entry_post")
 
 let postOutput = document.querySelector("#postSpace")
 postArea.addEventListener("keydown", function(e) {
+    console.log(e.keyCode)
     if (e.code=="Enter") { 
         e.preventDefault()
         postOutput.innerHTML += `<br>`
         } else if (e.keyCode==8) {
-            postOutput.innerText.slice(0, -1)
+            console.log("back")
+           postOutput.innerText = postOutput.innerText.slice(0, -1)
         } else if (e.keyCode==32) {
-            postOutput.innerText += " "
+            console.log("space")
+            postOutput.innerText += ' '
         } else 
         {
+            console.log("normal")
             postOutput.innerText += e.target.value.slice(-1)
         }
 })
