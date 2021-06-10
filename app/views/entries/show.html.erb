@@ -3,4 +3,8 @@
 <p> Title: <%= @entry.title %> </p>
 <p> Text:<%= simple_format(@entry.post) %> </p>
 
-<p>Possible Topics: <%= @entry.possible_topics.first %> </p>
+<p>Possible Topics: <% @entry.possible_topics.each do |top|  %>
+
+<br> <%= top %>
+<% end %>
+ </p>
