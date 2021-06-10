@@ -13,12 +13,29 @@
 <% end %>
 
 <div class = "outputArea">
-<div id = "titleSpace"><b>Title Here</b>
+<div id = "titleSpace"><b></b>
 <br><br></div>
 
 <div id = "postSpace">
 Post content Here</div>
 </div>
+
+
+<script>
+let titleArea = document.querySelector("#titleSpace > b")
+
+let getTitle = document.querySelector("#entry_title")
+getTitle.addEventListener("keydown", function(e) {
+  //  if (getTitle.value.length > 5) debugger
+    if (e.keyCode==8) {
+        titleArea.innerText = titleArea.innerText.slice(0, -1)
+    }
+    titleArea.innerText = e.target.value
+})
+
+</script>
+
+
 
 <%# <script>
 function sayHiTony() {
