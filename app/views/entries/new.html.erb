@@ -1,18 +1,41 @@
 <h1>User: <%= current_user.name %> </h1>
 <h2>New Entry Page</h2>
-<script>
-function sayHiTony() {
-    console.log("Hi Tony!");
-  }
-document.addEventListener("DOMContentLoaded", sayHiTony());
-</script>
-<%# <%= javascript_pack_tag 'preventEnter' %> %>
-<%= form_for [@user, @entry] do |f| %>
+
+
+
+ <%= form_for [@user, @entry] do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title%><br>
 <%= f.label :post %><br>
-<%= f.text_field :post, class:"post" %>
+<%= f.text_field :post, class: "post", wrapper: false %>
 
 <%= f.submit "Save" %>
 <% end %>
 
+<%# <script>
+function sayHiTony() {
+    console.log("Hi Tony!");
+  }
+
+let area = document.querySelector("#entry_post")
+area.addEventListener("keypress", function(e){
+    if (e.code=="Enter") { 
+        e.preventDefault()
+        e.target.value += `\n`
+        //  this.form.submit();
+        //     return false;
+    }
+    console.log(e)
+    if (e.target.value.length>5) debugger
+   
+})
+
+// function addKey() {
+//     obj = document.querySelector("#entry_post")
+//     obj.value = obj.value.toUpperCase();
+// }
+
+
+
+document.addEventListener("DOMContentLoaded", sayHiTony());
+</script> %>
