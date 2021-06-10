@@ -7,7 +7,7 @@
 <%= f.label :title %>
 <%= f.text_field :title%><br>
 <%= f.label :post %><br>
-<%= f.text_field :post, class: "post" %>
+<%= f.text_area :post, class: "post" %>
 
 <%= f.submit "Save" %>
 <% end %>
@@ -21,7 +21,7 @@
 </div>
 
 
-<script>
+<%# <script>
 let titleArea = document.querySelector("#titleSpace > b")
 
 let getTitle = document.querySelector("#entry_title")
@@ -55,4 +55,4 @@ postArea.addEventListener("keydown", function(e) {
 })
 
 
-</script>
+</script> %>
