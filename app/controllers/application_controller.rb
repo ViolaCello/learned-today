@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
      def user_ok?(user)
-        if !!user == false || (user.id != current_user.id)
+        if !!user == false || (user.id != current_user.id)  
             redirect_to '/'
         else
             true
