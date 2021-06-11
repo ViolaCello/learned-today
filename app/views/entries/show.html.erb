@@ -3,6 +3,12 @@
 <p> Title: <%= @entry.title %> </p>
 <p> Text:<%= simple_format(@entry.post) %> </p>
 
+
+<%= form_for [@user, @entry] do |f|%>
+<%= @entry.possible_topics.each do |top| %>
+<%= f.check_box_tag :topics,  `top` %><br>
+<% end %>
+<% end %>
 <p>Possible Topics: <% @entry.possible_topics.each do |top|  %>
 
 <br> <%= top %>
