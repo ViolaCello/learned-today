@@ -9,7 +9,7 @@ def possible_topics
   text = self.post 
   arr = text.split(' ')
   arr.map {|word| word.downcase!}
-  reduced = remove_common(arr)
+  reduced = remove_common(arr.uniq)
   return reduced
 end
   
