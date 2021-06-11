@@ -10,7 +10,8 @@ def possible_topics
   arr = text.split(' ')
   arr.map {|word| word.downcase!}
   reduced = remove_common(arr.uniq)
-  return reduced
+  a = MathFunctions.new
+  return a.merge_sort(reduced)
 end
   
 def remove_common_words(text)
