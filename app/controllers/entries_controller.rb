@@ -36,6 +36,17 @@ class EntriesController < ApplicationController
         @entry = Entry.find_by_id(params[:id])
      end
 
+     def edit
+        if logged_in?
+            @user = current_user
+            user_ok?(@user)
+            @entry = Entry.find_by_id(params[:id])
+            redirect_to '/' if @user.id != @entry.user_id
+        else
+            redirect_to '/'
+        end
+    end
+
      def update
         raise.params.inspect
      end

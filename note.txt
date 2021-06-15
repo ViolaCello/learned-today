@@ -1,0 +1,29 @@
+Move to Topics page
+<%= form_for [@user, @entry] do |f|%>
+<%  @entry.possible_topics.map do |top| %>
+
+<%= f.check_box :topics, { multiple: true }, top, false %> 
+<%= f.label :topics, top%> <br>
+<% end %>
+<%= f.submit %>
+<% end %>
+
+
+
+
+
+<%= @entry.possible_topics.each do |top| %>
+<% end %>
+
+
+This works:
+    <%= form_for [@user, @entry] do |f|%>
+ 
+<%= f.collection_check_boxes :topics, Entry.all, :id, :title %><br>
+
+<% end %>
+<p>Possible Topics: <% @entry.possible_topics.each do |top|  %>
+
+<br> <%= top %>
+<% end %>
+ </p>

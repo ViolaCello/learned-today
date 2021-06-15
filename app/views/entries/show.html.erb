@@ -4,11 +4,4 @@
 <p> Text:<%= simple_format(@entry.post) %> </p>
 
 
-<%= form_for [@user, @entry] do |f|%>
-<%  @entry.possible_topics.map do |top| %>
-
-<%= f.check_box :topics, { multiple: true }, top, false %> 
-<%= f.label :topics, top%> <br>
-<% end %>
-<%= f.submit %>
-<% end %>
+<%= link_to "Edit Entry", edit_user_entry_path(@entry.user, @entry)%>
