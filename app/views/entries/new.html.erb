@@ -4,6 +4,8 @@
 
 
 <%= form_for [@user, @entry] do |f| %>
+<%= f.label :Change_to_Custom_Date_if_not_for_today%><br><br>
+<%= f.date_select :custdate %><br><br>
 <%= f.label :title %>
 <%= f.text_field :title%><br>
 <%= f.label :post %><br>
