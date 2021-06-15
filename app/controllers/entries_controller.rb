@@ -51,6 +51,10 @@ class EntriesController < ApplicationController
         raise.params.inspect
      end
 
+     def destroy
+        raise.params.inspect
+     end
+
      private
  
      def require_login
