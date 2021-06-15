@@ -4,6 +4,7 @@ class Entry < ApplicationRecord
 
 
 
+
 def possible_topics
  
   text = self.post 
@@ -32,30 +33,19 @@ def binary_search(arr, value)
       puts mid
       return true
   end
-  puts "line 10"
   while arr[mid]!=value && left<=right do
   mid = ((left+right)/2).floor
-     puts "line 12"
-     puts "left", left
-     puts "right", right
-     puts "mid", mid
       if left==right-1
           if arr[left]==value
-              puts "The result is,",left
               return true
           elsif  
               arr[right]==value
-              puts "The result is, ",right
               return true
           else 
-              puts -1
               return false
           end
-puts "line 28"
       end
-      puts "line 30"
       if arr[mid]==value
-          puts "The result is=", mid
           return true
       elsif  
           value<arr[mid]
@@ -64,7 +54,6 @@ puts "line 28"
           left=mid
       end
   end
-  puts "last line, -1"
   return false
 end
 

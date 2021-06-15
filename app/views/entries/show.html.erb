@@ -5,9 +5,9 @@
 
 
 <%= form_for [@user, @entry] do |f|%>
-<%= @entry.possible_topics.each do |top| %>
-<%= f.check_box_tag :topics,  `top` %><br>
-<% end %>
+ 
+<%= f.collection_check_boxes :topics, Entry.all, :id, :title %><br>
+
 <% end %>
 <p>Possible Topics: <% @entry.possible_topics.each do |top|  %>
 

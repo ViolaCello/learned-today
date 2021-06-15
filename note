@@ -1,0 +1,2 @@
+<%= @entry.possible_topics.each do |top| %>
+<% end %>
