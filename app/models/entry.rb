@@ -22,7 +22,7 @@ def remove_common_words(arr)
    new_arr.delete_if{|word| binary_search(commons, word)}
    puts arr.length
    puts new_arr.length
-   return new_arr
+   return new_arr.uniq!
 end
 
 def binary_search(arr, value)

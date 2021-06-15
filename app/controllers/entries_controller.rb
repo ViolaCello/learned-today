@@ -36,6 +36,10 @@ class EntriesController < ApplicationController
         @entry = Entry.find_by_id(params[:id])
      end
 
+     def update
+        raise.params.inspect
+     end
+
      private
  
      def require_login

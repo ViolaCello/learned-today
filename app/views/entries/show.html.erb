@@ -5,8 +5,10 @@
 
 
 <%= form_for [@user, @entry] do |f|%>
-<%=  @entry.possible_topics.each do |top| %>
-<%= f.label :topics, top%>
-<br><%= f.check_box :topics, { multiple: true }, top, false %> 
+<%  @entry.possible_topics.map do |top| %>
+
+<%= f.check_box :topics, { multiple: true }, top, false %> 
+<%= f.label :topics, top%> <br>
 <% end %>
+<%= f.submit %>
 <% end %>
