@@ -3,7 +3,6 @@ class TopicsController < ApplicationController
     def new
         @topic = Topic.new
         @entry = Entry.find_by_id(params[:entry_id])
-        byebug
     end
 
     def create

@@ -1,0 +1,19 @@
+<h1>Enter Topic Keywords here, <%= @entry.user.name %></h1>
+
+<h3> Entry Title: <i> <%= @entry.title %> </i> </h3>
+
+<h5> Entry Date:  <%= @entry.custdate %>  </h5>
+
+<button>Show Post?</button>
+
+<div class="posthere">
+</div>
+
+<script>
+let but = document.querySelector("body > button")
+but.addEventListener("click", () => {
+    document.querySelector("body > div.posthere").innerHTML = `
+    <%= @entry.post %>
+    `
+})
+</script>
