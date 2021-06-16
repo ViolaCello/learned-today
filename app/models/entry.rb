@@ -4,7 +4,6 @@ class Entry < ApplicationRecord
 
 
 
-
 def possible_topics
  
   text = self.post 
