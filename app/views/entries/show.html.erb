@@ -4,6 +4,7 @@
 <p> <%= @entry.custdate.strftime("%A %B %d, %Y") %> </p>
 <p> Text:<%= simple_format(@entry.post) %> </p>
 
+<%= link_to "Add Indexes", new_entry_topic_path(@entry) %>
 
 <%= link_to "Edit Entry", edit_user_entry_path(@entry.user, @entry)%>
 
